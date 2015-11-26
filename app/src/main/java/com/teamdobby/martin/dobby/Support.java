@@ -32,16 +32,7 @@ public class Support extends AppCompatActivity {
                             text = "Support-Mail successfully sent";
                             Intent myIntent = new Intent(Support.this, ConnectDrawer.class);
                             Support.this.startActivity(myIntent);
-
-                            try {
-                                GMailSender sender = new GMailSender("username@gmail.com", "password");
-                                sender.sendMail("This is Subject",
-                                        "This is Body",
-                                        "user@gmail.com",
-                                        "user@yahoo.com");
-                            } catch (Exception e) {
-                                Log.e("SendMail", e.getMessage(), e);
-                            }
+                            
 
                         } else {
                             text = "Please enter a longer message";
