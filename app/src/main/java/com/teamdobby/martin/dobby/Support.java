@@ -30,9 +30,16 @@ public class Support extends AppCompatActivity {
                     if (android.util.Patterns.EMAIL_ADDRESS.matcher(tmpmail).matches()) {
                         if (tmptext.length()>10) {
                             text = "Support-Mail successfully sent";
-                            Intent myIntent = new Intent(Support.this, ConnectDrawer.class);
-                            Support.this.startActivity(myIntent);
-                            
+                            //Intent myIntent = new Intent(Support.this, ConnectDrawer.class);
+                            //Support.this.startActivity(myIntent);
+
+                            Intent mailintent = new Intent(Intent.ACTION_SEND);
+                            mailintent.setType("text/html");
+                            mailintent.putExtra(Intent.EXTRA_EMAIL, "m@rtin-moessner.de");
+                            mailintent.putExtra(Intent.EXTRA_SUBJECT, "Dobby Support");
+                            mailintent.putExtra(Intent.EXTRA_TEXT, "Username: "+logindata.getCurrUser()+", Mail: "+tmpmail+" Message: "+tmptext+"");
+
+                            startActivity(Intent.createChooser(mailintent, "Send Email"));
 
                         } else {
                             text = "Please enter a longer message";
