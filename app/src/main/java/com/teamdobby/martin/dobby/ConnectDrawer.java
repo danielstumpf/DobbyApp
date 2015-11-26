@@ -83,7 +83,11 @@ public class ConnectDrawer extends AppCompatActivity
         } else if (id == R.id.menu_info){
             Intent myIntent = new Intent(ConnectDrawer.this, InfoAbout.class);
             ConnectDrawer.this.startActivity(myIntent);
-        } else if (id == R.id.nav_settings){
+        }
+        else if (id == R.id.menu_support){
+            Intent myIntent = new Intent(ConnectDrawer.this, Support.class);
+            ConnectDrawer.this.startActivity(myIntent);
+        }else if (id == R.id.nav_settings){
 
         }
 

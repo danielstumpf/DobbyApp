@@ -7,15 +7,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark" android:orientation="vertical"
-    android:gravity="bottom">
+    android:gravity="bottom"
+    android:weightSum="1">
 
-    <ImageView android:layout_width="253dp" android:layout_height="91dp"
+    <ImageView android:layout_width="570dp" android:layout_height="123dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:src="@drawable/dobbykopf" android:id="@+id/imageView" />
-
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing" android:text="You are logged in as ."
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:id="@+id/textLogged" />
 
 </LinearLayout>

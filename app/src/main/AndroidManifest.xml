@@ -31,6 +31,8 @@
             android:label="@string/title_activity_info_about"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".Support" >
+        </activity>
     </application>
 
 </manifest>
