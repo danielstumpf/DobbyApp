@@ -14,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,14 +30,23 @@ public class ConnectDrawer extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        setTitle("Welcome, "+logindata.getCurrUser()+"!");
+        final Button connect;
+        connect = (Button)findViewById(R.id.buttonConnect);
+
+        connect.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (v == connect) {
+                    Intent myIntent = new Intent(ConnectDrawer.this, PiConnection.class);
+                    ConnectDrawer.this.startActivity(myIntent);
+                }
+            }
+        });
+        setTitle("Welcome, " + logindata.getCurrUser() + "!");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
@@ -46,53 +57,52 @@ public class ConnectDrawer extends AppCompatActivity
         textLogged= (TextView) findViewById(R.id.textLogged);
         textLogged.setText("You are logged in as "+logindata.getCurrUser()+".");
     }*/
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            //do nothing because otherwise user could login a second time
-        }
-    }
+                @Override
+                public void onBackPressed () {
+                    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                    if (drawer.isDrawerOpen(GravityCompat.START)) {
+                        drawer.closeDrawer(GravityCompat.START);
+                    } else {
+                        //do nothing because otherwise user could login a second time
+                    }
+                }
 
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+                @SuppressWarnings("StatementWithEmptyBody")
+                @Override
+                public boolean onNavigationItemSelected (MenuItem item){
+                    // Handle navigation view item clicks here.
+                    int id = item.getItemId();
 
-        if (id == R.id.nav_change_user) {
-            // Handle the camera action
+                    if (id == R.id.nav_change_user) {
+                        // Handle the camera action
 
-        } else if (id == R.id.nav_change_pass) {
-            Intent myIntent = new Intent(ConnectDrawer.this, ChangePass.class);
-            ConnectDrawer.this.startActivity(myIntent);
+                    } else if (id == R.id.nav_change_pass) {
+                        Intent myIntent = new Intent(ConnectDrawer.this, ChangePass.class);
+                        ConnectDrawer.this.startActivity(myIntent);
 
-        } else if (id == R.id.nav_logout){
-            logindata.notLogged();
-            logindata.setCurrUser("");
-            CharSequence text = "Successfully logged out";
-            Context context = getApplicationContext();
-            int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
-            Intent myIntent = new Intent(ConnectDrawer.this, MainActivity.class);
-            ConnectDrawer.this.startActivity(myIntent);
-        } else if (id == R.id.menu_info){
-            Intent myIntent = new Intent(ConnectDrawer.this, InfoAbout.class);
-            ConnectDrawer.this.startActivity(myIntent);
-        }
-        else if (id == R.id.menu_support){
-            Intent myIntent = new Intent(ConnectDrawer.this, Support.class);
-            ConnectDrawer.this.startActivity(myIntent);
-        }else if (id == R.id.nav_settings){
+                    } else if (id == R.id.nav_logout) {
+                        logindata.notLogged();
+                        logindata.setCurrUser("");
+                        CharSequence text = "Successfully logged out";
+                        Context context = getApplicationContext();
+                        int duration = Toast.LENGTH_SHORT;
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+                        Intent myIntent = new Intent(ConnectDrawer.this, MainActivity.class);
+                        ConnectDrawer.this.startActivity(myIntent);
+                    } else if (id == R.id.menu_info) {
+                        Intent myIntent = new Intent(ConnectDrawer.this, InfoAbout.class);
+                        ConnectDrawer.this.startActivity(myIntent);
+                    } else if (id == R.id.menu_support) {
+                        Intent myIntent = new Intent(ConnectDrawer.this, Support.class);
+                        ConnectDrawer.this.startActivity(myIntent);
+                    } else if (id == R.id.nav_settings) {
 
-        }
+                    }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-}
+                    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                    drawer.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+            }
