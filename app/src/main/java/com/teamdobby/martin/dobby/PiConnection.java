@@ -37,7 +37,6 @@ public class PiConnection extends AppCompatActivity {
         ersterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (v == ersterButton) {
-                    //ACTION 1
                     new AsyncTask<Integer, Void, Void>(){
                         @Override
                         protected Void doInBackground(Integer... params) {
@@ -58,8 +57,6 @@ public class PiConnection extends AppCompatActivity {
         zweiterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (v == zweiterButton) {
-                    //ACTION 2
-
                     new AsyncTask<Integer, Void, Void>(){
                         @Override
                         protected Void doInBackground(Integer... params) {
@@ -78,8 +75,7 @@ public class PiConnection extends AppCompatActivity {
 
         dritterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (v == ersterButton) {
-                    //ACTION 1
+                if (v == dritterButton) {
                     new AsyncTask<Integer, Void, Void>(){
                         @Override
                         protected Void doInBackground(Integer... params) {
@@ -98,8 +94,7 @@ public class PiConnection extends AppCompatActivity {
 
         vierterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (v == ersterButton) {
-                    //ACTION 1
+                if (v == vierterButton) {
                     new AsyncTask<Integer, Void, Void>(){
                         @Override
                         protected Void doInBackground(Integer... params) {
