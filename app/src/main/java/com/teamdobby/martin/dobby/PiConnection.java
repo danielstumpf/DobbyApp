@@ -23,12 +23,16 @@ public class PiConnection extends AppCompatActivity {
 
         final Button ersterButton;
         final Button zweiterButton;
+        final Button dritterButton;
+        final Button vierterButton;
         ersterButton = (Button) findViewById(R.id.button2);
         zweiterButton = (Button) findViewById(R.id.button3);
-        String message23On = "sudo echo \"1\" > /sys/class/gpio/gpio23/value";
-        String message23Off = "sudo echo \"1\" > /sys/class/gpio/gpio23/value";
-        String message24On = "sudo echo \"1\" > /sys/class/gpio/gpio23/value";
-        String message24Off = "sudo echo \"1\" > /sys/class/gpio/gpio23/value";
+        dritterButton = (Button) findViewById(R.id.button4);
+        vierterButton = (Button) findViewById(R.id.button5);
+        final String message23On = "sudo echo \"1\" > /sys/class/gpio/gpio23/value";
+        final String message23Off = "sudo echo \"1\" > /sys/class/gpio/gpio23/value";
+        final String message24On = "sudo echo \"1\" > /sys/class/gpio/gpio23/value";
+        final String message24Off = "sudo echo \"1\" > /sys/class/gpio/gpio23/value";
 
         ersterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -60,6 +64,26 @@ public class PiConnection extends AppCompatActivity {
                         @Override
                         protected Void doInBackground(Integer... params) {
                             try {
+                                String msg = "sudo echo \"1\" > /sys/class/gpio/gpio24/value";
+                                executeRemoteCommand("pi", "raspberry", "192.168.2.45", msg);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            return null;
+                        }
+                    }.execute(1);
+                }
+            }
+        });
+
+        dritterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (v == ersterButton) {
+                    //ACTION 1
+                    new AsyncTask<Integer, Void, Void>(){
+                        @Override
+                        protected Void doInBackground(Integer... params) {
+                            try {
                                 String msg = "sudo echo \"0\" > /sys/class/gpio/gpio23/value";
                                 executeRemoteCommand("pi", "raspberry", "192.168.2.45", msg);
                             } catch (Exception e) {
@@ -71,6 +95,27 @@ public class PiConnection extends AppCompatActivity {
                 }
             }
         });
+
+        vierterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (v == ersterButton) {
+                    //ACTION 1
+                    new AsyncTask<Integer, Void, Void>(){
+                        @Override
+                        protected Void doInBackground(Integer... params) {
+                            try {
+                                String msg = "sudo echo \"0\" > /sys/class/gpio/gpio24/value";
+                                executeRemoteCommand("pi", "raspberry", "192.168.2.45", msg);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            return null;
+                        }
+                    }.execute(1);
+                }
+            }
+        });
+
     }
 
 
