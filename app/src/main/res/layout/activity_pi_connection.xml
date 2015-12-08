@@ -10,7 +10,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Turn on"
+        android:text="Turn LED 1 on"
         android:id="@+id/button2"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -20,9 +20,30 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Turn off"
+        android:text="Turn LED 2 on"
         android:id="@+id/button3"
         android:layout_below="@+id/button2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Turn LED 1 off"
+        android:id="@+id/button4"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="84dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Turn LED 2 off"
+        android:id="@+id/button5"
+        android:layout_below="@+id/button4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="124dp"
+        />
 </RelativeLayout>
