@@ -19,8 +19,8 @@ Feature: Dobby Support-Page
 			And 		I press "loginConfirm"
 			And 		I should see "Successfully logged in"
 			
-		When 			I click on screen 3% from the left and 7% from the top
-			And 		I press "support"
+		When 		I click on screen 3% from the left and 7% from the top
+			And 		I press "Support"
 			
 		Then 		I should see "Send a Support-Mail"
 

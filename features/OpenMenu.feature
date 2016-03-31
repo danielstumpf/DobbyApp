@@ -19,7 +19,7 @@ Feature: Dobby OpenMenu
 			And 		I press "loginConfirm"
 			And 		I should see "Successfully logged in"
 			
-		When 		I press "toolbar" 	
+		When 		I click on screen 3% from the left and 7% from the top 	
 			
 		Then 		I should see "About this Project"
 

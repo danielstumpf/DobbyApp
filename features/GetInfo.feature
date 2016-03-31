@@ -19,11 +19,11 @@ Feature: Dobby - Get General Information Page
 		And 			I press the enter button
 		And 			I press "loginConfirm"
 		And 			I should see "Successfully logged in"
-	
-	When 			I press "toolbar"
-		And			I press "getInfo"
 		
-	Then				I should see "General Information"
+	When 			I click on screen 3% from the left and 7% from the top 	
+		And 			I press "General Information"	
+			
+	Then 			I should see "Dobby-App"
 	
 	
 	Examples:
