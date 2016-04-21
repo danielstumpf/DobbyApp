@@ -51,7 +51,7 @@ public class LoginData {
     }
 
     static String getCurrUser(){
-        if (curruser != null||curruser!="") {
+        if (curruser != null && curruser!="") {
             return curruser;
         }
         else return "ERROR";
